@@ -17,7 +17,7 @@ A Mesa Script exports a class with a script() method that is passed the followin
 | Name | Type | Description |  |
 | ---- | ---- | ----------- | -------- |
 | payload | `object`  | The payload data | &nbsp; |
-| context | `<a href="#-object-context">context</a>`  | Contains data relative to the current task that is running. | &nbsp; |
+| context | <a href="#object-context">Context</a>  | Contains data relative to the current task that is running. | &nbsp; |
 
 
 
@@ -29,7 +29,7 @@ A Mesa Script exports a class with a script() method that is passed the followin
 
 
 
-#### {object} context() 
+#### {object} Context() 
 
 context parameter
 
@@ -41,14 +41,14 @@ context parameter
 | Name | Type | Description |  |
 | ---- | ---- | ----------- | -------- |
 | payload | `object`  | The payload data | &nbsp; |
-| shop | `<a href="#-object-shop">shop</a>`  | Complete Shopify shop object | &nbsp; |
+| shop | <a href="#object-shop">Shop</a>  | Complete Shopify shop object | &nbsp; |
 | shop.email | `string`  | Merchant's email address | &nbsp; |
 | shop.myshopify_domain | `string`  | Shop string. Example: myshop.myshopify.com | &nbsp; |
 | shop.myshopify_domain | `domain`  | Shop's domain if it has been customized, otherwise the myshopify domain | &nbsp; |
 | steps | `object`  | An object containing the full payload for each step run in this automation so far, keyed by each step's key. For example `steps.shopify`. | &nbsp; |
-| trigger | `<a href="#-object-trigger">trigger</a>`  | The complete Trigger object contains information about the current step being run | &nbsp; |
-| task | `<a href="#-object-task">task</a>`  | The complete Task object contains information about this specific task run | &nbsp; |
-| automation | `<a href="#-object-automation">automation</a>`  | The complete Automation object contains information about the workflow | &nbsp; |
+| trigger | <a href="#object-trigger">Trigger</a>  | The complete Trigger object contains information about the current step being run | &nbsp; |
+| task | <a href="#object-task">Task</a>  | The complete Task object contains information about this specific task run | &nbsp; |
+| automation | <a href="#object-automation">Automation</a>  | The complete Automation object contains information about the workflow | &nbsp; |
 
 
 
@@ -60,9 +60,9 @@ context parameter
 
 
 
-#### {object} task() 
+#### {object} Task() 
 
-task model generated from https://transform.tools/json-to-jsdoc
+Task details for the current step.
 
 
 
@@ -125,9 +125,9 @@ task model generated from https://transform.tools/json-to-jsdoc
 
 
 
-#### {object} trigger() 
+#### {object} Trigger() 
 
-trigger model generated from https://transform.tools/json-to-jsdoc
+Trigger details for the current step including the service and step configuration.
 
 
 
@@ -201,9 +201,9 @@ trigger model generated from https://transform.tools/json-to-jsdoc
 
 
 
-#### {object} automation() 
+#### {object} Automation() 
 
-automation model generated from https://transform.tools/json-to-jsdoc
+The details of the current workflow.
 
 
 
@@ -248,99 +248,9 @@ automation model generated from https://transform.tools/json-to-jsdoc
 
 
 
-#### {object} trigger() 
+#### {object} Shop() 
 
-trigger model generated from https://transform.tools/json-to-jsdoc
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| schema | `number`  |  | &nbsp; |
-| version | `string`  |  | &nbsp; |
-| trigger_type | `string`  |  | &nbsp; |
-| is_premium | `boolean`  |  | &nbsp; |
-| is_pro | `boolean`  |  | &nbsp; |
-| uuid | `string`  |  | &nbsp; |
-| automation | `string`  |  | &nbsp; |
-| type | `string`  |  | &nbsp; |
-| entity | `string`  |  | &nbsp; |
-| action | `string`  |  | &nbsp; |
-| operation_id | `string`  |  | &nbsp; |
-| name | `string`  |  | &nbsp; |
-| key | `string`  |  | &nbsp; |
-| trigger_name | `string`  |  | &nbsp; |
-| metadata | `object`  |  | &nbsp; |
-| metadata.host | `string`  |  | &nbsp; |
-| metadata.allow_duplicate | `boolean`  |  | &nbsp; |
-| {} |  | local_fields | &nbsp; |
-| weight | `number`  |  | &nbsp; |
-| script |  |  | &nbsp; |
-| on_error |  |  | &nbsp; |
-| _id | `string`  |  | &nbsp; |
-| created_at | `string`  |  | &nbsp; |
-| updated_at | `string`  |  | &nbsp; |
-| tokens_ignore_previous |  |  | &nbsp; |
-| {} |  | response | &nbsp; |
-| fields | `Array.&#60;object&#62;`  |  | &nbsp; |
-| fields.key | `string`  |  | &nbsp; |
-| fields.label | `string`  |  | &nbsp; |
-| fields.type | `string`  |  | &nbsp; |
-| fields.disabled | `boolean`  |  | &nbsp; |
-| fields.export | `boolean`  |  | &nbsp; |
-| fields.copy | `boolean`  |  | &nbsp; |
-| {} |  | response_example | &nbsp; |
-| {} |  | request_example | &nbsp; |
-| configuration_aside |  |  | &nbsp; |
-| connector_name | `string`  |  | &nbsp; |
-| icon | `string`  |  | &nbsp; |
-| description | `string`  |  | &nbsp; |
-
-
-
-
-##### Returns
-
-
-- `Void`
-
-
-
-#### {object} json() 
-
-script model generated from https://transform.tools/json-to-jsdoc
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| automation | `string`  |  | &nbsp; |
-| script_id | `string`  |  | &nbsp; |
-| filename | `string`  |  | &nbsp; |
-| version | `string`  |  | &nbsp; |
-| _id | `string`  |  | &nbsp; |
-| created_at | `string`  |  | &nbsp; |
-| updated_at | `string`  |  | &nbsp; |
-
-
-
-
-##### Returns
-
-
-- `Void`
-
-
-
-#### {object} shop() 
-
-shop model generated from https://transform.tools/json-to-jsdoc
+Details from the active Shopify store including email address and domain.
 
 
 
